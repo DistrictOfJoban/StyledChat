@@ -24,18 +24,18 @@ public abstract class PlayerEntityMixin {
 
     @Inject(method = "getDisplayName", at = @At("TAIL"), cancellable = true)
     private void styledChat_replaceDisplayName(CallbackInfoReturnable<Text> cir) {
-        if (!this.styledChat$ignoreNextCalls && ((Object) this).getClass() == ServerPlayerEntity.class) {
-            if (this.styledChat$cachedAge == ((Entity) (Object) this).age) {
-                cir.setReturnValue(this.styledChat$cachedName);
-                return;
-            }
-
-            this.styledChat$ignoreNextCalls = true;
-            var name = StyledChatStyles.getDisplayName((ServerPlayerEntity) (Object) this, cir.getReturnValue());
-            this.styledChat$ignoreNextCalls = false;
-            this.styledChat$cachedName = name;
-            this.styledChat$cachedAge = ((Entity) (Object) this).age;
-            cir.setReturnValue(name);
-        }
+//        if (!this.styledChat$ignoreNextCalls && ((Object) this).getClass() == ServerPlayerEntity.class) {
+//            if (this.styledChat$cachedAge == ((Entity) (Object) this).age) {
+//                cir.setReturnValue(this.styledChat$cachedName);
+//                return;
+//            }
+//
+//            this.styledChat$ignoreNextCalls = true;
+//            var name = StyledChatStyles.getDisplayName((ServerPlayerEntity) (Object) this, cir.getReturnValue());
+//            this.styledChat$ignoreNextCalls = false;
+//            this.styledChat$cachedName = name;
+//            this.styledChat$cachedAge = ((Entity) (Object) this).age;
+//            cir.setReturnValue(name);
+//        }
     }
 }
